@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestionar Servicios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-gray-800 text-white flex flex-col">
+            <div class="p-4 text-center text-2xl font-bold border-b border-gray-700">
+                Picca Admin
+            </div>
+            <nav class="flex-1 mt-4">
+                <a href="dashboard-propiedades.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-700">
+                    <i class="fas fa-home w-6 text-center"></i>
+                    <span class="ml-2">Mis Propiedades</span>
+                </a>
+                <a href="dashboard-nueva-propiedad.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-700">
+                    <i class="fas fa-plus w-6 text-center"></i>
+                    <span class="ml-2">Añadir Propiedad</span>
+                </a>
+                <a href="dashboard-servicios.html" class="flex items-center px-4 py-3 bg-gray-900 text-white">
+                    <i class="fas fa-briefcase w-6 text-center"></i>
+                    <span class="ml-2">Gestionar Servicios</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-gray-700">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-700">
+                    <i class="fas fa-sign-out-alt w-6 text-center"></i>
+                    <span class="ml-2">Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-8 overflow-y-auto">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Gestionar Servicios</h1>
+
+            <p class="text-gray-600 mb-6">Aquí puede editar el contenido que aparece en la sección "Nuestros Servicios" de la página pública. No puede crear nuevos servicios, solo editar los existentes.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center">
+                            <i class="fas fa-home text-blue-600 text-2xl"></i>
+                        </div>
+                        <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit mr-1"></i> Editar</button>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Servicios Inmobiliarios</h3>
+                    <p class="text-gray-600 text-sm">Asesoramiento integral para la compra, venta y alquiler de inmuebles.</p>
+                    <ul class="mt-4 text-left text-sm text-gray-600 space-y-1">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Venta de propiedades</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Alquileres</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Tasaciones</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center">
+                            <i class="fas fa-car text-blue-600 text-2xl"></i>
+                        </div>
+                        <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit mr-1"></i> Editar</button>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Gestoría Automotor</h3>
+                    <p class="text-gray-600 text-sm">Trámites vehiculares ágiles y seguros para tu tranquilidad.</p>
+                    <ul class="mt-4 text-left text-sm text-gray-600 space-y-1">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Transferencias</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Altas y bajas</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Informes de dominio</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                        </div>
+                        <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit mr-1"></i> Editar</button>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Servicios de Seguros</h3>
+                    <p class="text-gray-600 text-sm">Protección para tus bienes y tu familia con las mejores coberturas.</p>
+                    <ul class="mt-4 text-left text-sm text-gray-600 space-y-1">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Seguros para el hogar</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Seguros automotores</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Seguros de vida</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

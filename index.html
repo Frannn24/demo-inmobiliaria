@@ -3,46 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picca Inmobiliaria - Encuentra tu hogar ideal</title>
+    <title>Picca Inmobiliaria | Servicios Inmobiliarios, Gestoría y Seguros</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        .property-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .property-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80');
-            background-size: cover;
-            background-position: center;
-        }
+        body { font-family: 'Roboto', sans-serif; }
+        .property-card { transition: transform 0.3s, box-shadow 0.3s; }
+        .property-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .hero-bg { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80'); background-size: cover; background-position: center; }
+        .contact-bg { background: linear-gradient(rgba(59, 130, 246, 0.9), rgba(59, 130, 246, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80'); background-size: cover; background-position: center; }
+        /* Estilo para el mapa */
+        #map-view { height: 600px; }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-10">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <i class="fas fa-home text-blue-600 text-2xl mr-2"></i>
+                <img src="logo.png" alt="Logo Picca" class="h-10 mr-2"> 
                 <span class="text-xl font-bold text-gray-800">Picca Inmobiliaria</span>
             </div>
             
             <nav class="hidden md:flex space-x-6">
                 <a href="#inicio" class="text-blue-600 font-medium">Inicio</a>
                 <a href="#propiedades" class="text-gray-600 hover:text-blue-600">Propiedades</a>
-                <a href="#servicios" class="text-gray-600 hover:text-blue-600">Servicios</a>
+                <a href="#vender" class="text-gray-600 hover:text-blue-600">Vender mi Propiedad</a>
+                <a href="#servicios" class="text-gray-600 hover:text-blue-600">Otros Servicios</a>
                 <a href="#nosotros" class="text-gray-600 hover:text-blue-600">Nosotros</a>
                 <a href="#contacto" class="text-gray-600 hover:text-blue-600">Contacto</a>
             </nav>
             
             <div class="flex items-center space-x-4">
+                <a href="https://wa.me/543572693392" target="_blank" class="bg-green-500 text-white px-3 py-2 rounded-md hover:bg-green-600 transition flex items-center">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
                 <button class="md:hidden text-gray-600">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
@@ -50,13 +46,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="inicio" class="hero-bg text-white py-20">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Encuentra tu hogar ideal</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Encuentra tu propiedad ideal</h1>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Servicios inmobiliarios, gestoría automotor y seguros con asesoramiento personalizado</p>
             
-            <!-- Search Bar -->
             <div class="bg-white rounded-lg shadow-lg p-4 max-w-4xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div>
@@ -74,13 +68,10 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-gray-700 text-sm font-medium mb-1">Precio Máximo</label>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Operación</label>
                         <select class="w-full p-2 border rounded-md text-gray-700">
-                            <option>Sin límite</option>
-                            <option>USD 50,000</option>
-                            <option>USD 100,000</option>
-                            <option>USD 200,000</option>
-                            <option>USD 500,000</option>
+                            <option>Venta</option>
+                            <option>Alquiler</option>
                         </select>
                     </div>
                     <div class="flex items-end">
@@ -93,93 +84,112 @@
         </div>
     </section>
 
-    <!-- Featured Properties -->
     <section id="propiedades" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Propiedades Destacadas</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">Propiedades Disponibles</h2>
             
-            <!-- Filters -->
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button class="px-4 py-2 bg-blue-600 text-white rounded-md">Todos</button>
-                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Casas</button>
-                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Departamentos</button>
-                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Locales</button>
-                <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Terrenos</button>
+            <div class="flex justify-center mb-8">
+                <div class="bg-gray-200 rounded-full p-1 flex">
+                    <button id="show-grid" class="px-6 py-2 rounded-full bg-blue-600 text-white font-medium shadow-md">
+                        <i class="fas fa-th-list mr-2"></i>Vista de Lista
+                    </button>
+                    <button id="show-map" class="px-6 py-2 rounded-full text-gray-700 font-medium">
+                        <i class="fas fa-map-marked-alt mr-2"></i>Vista de Mapa
+                    </button>
+                </div>
             </div>
-            
-            <!-- Properties Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Property 1 -->
-                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                             alt="Casa moderna" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded-md">Venta</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Casa Moderna en Zona Norte</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Av. Principal 123, Zona Norte</p>
-                        <div class="flex justify-between text-gray-700 mb-4">
-                            <span><i class="fas fa-bed text-blue-600 mr-1"></i> 3 dorm.</span>
-                            <span><i class="fas fa-bath text-blue-600 mr-1"></i> 2 baños</span>
-                            <span><i class="fas fa-car text-blue-600 mr-1"></i> 2 cocheras</span>
-                            <span><i class="fas fa-ruler-combined text-blue-600 mr-1"></i> 180 m²</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-blue-600">USD 250,000</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                                Ver Detalles
-                            </button>
-                        </div>
-                    </div>
+
+            <div id="map-view" class="hidden mb-8 rounded-lg shadow-lg overflow-hidden">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54497.55998687747!2d-63.94828131362391!3d-31.55431688640707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432f716a416a25b%3A0xf6de5f969b6b3e7!2sR%C3%ADo%20Segundo%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1731864082159!5m2!1ses-419!2sar" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div id="grid-view">
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md">Todos</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Casas</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Departamentos</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Locales</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Terrenos</button>
                 </div>
                 
-                <!-- Property 2 -->
-                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                             alt="Departamento luminoso" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 right-4 bg-green-600 text-white px-2 py-1 rounded-md">Alquiler</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Departamento Luminoso en Centro</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Centro Comercial 456, Centro</p>
-                        <div class="flex justify-between text-gray-700 mb-4">
-                            <span><i class="fas fa-bed text-blue-600 mr-1"></i> 2 dorm.</span>
-                            <span><i class="fas fa-bath text-blue-600 mr-1"></i> 1 baño</span>
-                            <span><i class="fas fa-car text-blue-600 mr-1"></i> 1 cochera</span>
-                            <span><i class="fas fa-ruler-combined text-blue-600 mr-1"></i> 85 m²</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="property-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Casa moderna" class="w-full h-48 object-cover">
+                            <span class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded-md">Venta</span>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-blue-600">USD 800/mes</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                                Ver Detalles
-                            </button>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Casa Moderna en Barrio Jardín</h3>
+                            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Barrio Jardín, Río Segundo</p>
+                            <div class="flex justify-between text-gray-700 mb-4">
+                                <span><i class="fas fa-bed text-blue-600 mr-1"></i> 3 dorm.</span>
+                                <span><i class="fas fa-bath text-blue-600 mr-1"></i> 2 baños</span>
+                                <span><i class="fas fa-car text-blue-600 mr-1"></i> 2 cocheras</span>
+                                <span><i class="fas fa-ruler-combined text-blue-600 mr-1"></i> 180 m²</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">$ 85,000,000</span>
+                                <button class="view-details bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-property="1">
+                                    Ver Detalles
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Property 3 -->
-                <div class="property-card bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                             alt="Casa con jardín" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded-md">Venta</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Casa Familiar con Jardín</h3>
-                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Calle Residencial 789, Barrio Sur</p>
-                        <div class="flex justify-between text-gray-700 mb-4">
-                            <span><i class="fas fa-bed text-blue-600 mr-1"></i> 4 dorm.</span>
-                            <span><i class="fas fa-bath text-blue-600 mr-1"></i> 3 baños</span>
-                            <span><i class="fas fa-car text-blue-600 mr-1"></i> 2 cocheras</span>
-                            <span><i class="fas fa-ruler-combined text-blue-600 mr-1"></i> 220 m²</span>
+                    
+                    <div class="property-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Departamento luminoso" class="w-full h-48 object-cover">
+                            <span class="absolute top-4 right-4 bg-green-600 text-white px-2 py-1 rounded-md">Alquiler</span>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-blue-600">USD 350,000</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                                Ver Detalles
-                            </button>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Departamento Céntrico</h3>
+                            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Centro, Río Segundo</p>
+                            <div class="flex justify-between text-gray-700 mb-4">
+                                <span><i class="fas fa-bed text-blue-600 mr-1"></i> 2 dorm.</span>
+                                <span><i class="fas fa-bath text-blue-600 mr-1"></i> 1 baño</span>
+                                <span><i class="fas fa-car text-blue-600 mr-1"></i> 1 cochera</span>
+                                <span><i class="fas fa-ruler-combined text-blue-600 mr-1"></i> 65 m²</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">$ 85,000/mes</span>
+                                <button class="view-details bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-property="2">
+                                    Ver Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Casa con jardín" class="w-full h-48 object-cover">
+                            <span class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded-md">Venta</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Casa Familiar con Pileta</h3>
+                            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Barrio San Martín, Río Segundo</p>
+                            <div class="flex justify-between text-gray-700 mb-4">
+                                <span><i class="fas fa-bed text-blue-600 mr-1"></i> 4 dorm.</span>
+                                <span><i class="fas fa-bath text-blue-600 mr-1"></i> 3 baños</span>
+                                <span><i class="fas fa-car text-blue-600 mr-1"></i> 2 cocheras</span>
+                                <span><i class="fas fa-ruler-combined text-blue-600 mr-1"></i> 220 m²</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">$ 120,000,000</span>
+                                <button class="view-details bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-property="3">
+                                    Ver Detalles
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -193,24 +203,29 @@
         </div>
     </section>
 
-    <!-- Services -->
+    <section id="vender" class="py-16 bg-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Querés Vender o Alquilar tu Propiedad?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Dejalo en manos expertas. Me encargo de todo el proceso para que no tengas que preocuparte por nada. 
+                Ofrecemos tasación profesional y la mejor exposición para tu casa, terreno o local.
+            </p>
+            <a href="#contacto" class="bg-white text-blue-700 font-bold px-8 py-3 rounded-md hover:bg-gray-100 transition text-lg shadow-lg">
+                Solicitar Tasación
+            </a>
+        </div>
+    </section>
     <section id="servicios" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">Otros Servicios</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-home text-blue-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Servicios Inmobiliarios</h3>
+                    <h3 class="text-xl font-bold mb-2">Asesoría Inmobiliaria</h3>
                     <p class="text-gray-600">Asesoramiento integral para la compra, venta y alquiler de inmuebles.</p>
-                    <ul class="mt-4 text-left text-sm text-gray-600">
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Venta de propiedades</li>
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Alquileres temporarios y permanentes</li>
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Tasaciones profesionales</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Asesoramiento legal inmobiliario</li>
-                    </ul>
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
@@ -219,12 +234,6 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2">Gestoría Automotor</h3>
                     <p class="text-gray-600">Trámites vehiculares ágiles y seguros para tu tranquilidad.</p>
-                    <ul class="mt-4 text-left text-sm text-gray-600">
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Transferencias de vehículos</li>
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Altas y bajas de automotores</li>
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Informes de dominio</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Asesoramiento en trámites DNRPA</li>
-                    </ul>
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
@@ -233,18 +242,11 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2">Servicios de Seguros</h3>
                     <p class="text-gray-600">Protección para tus bienes y tu familia con las mejores coberturas.</p>
-                    <ul class="mt-4 text-left text-sm text-gray-600">
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Seguros para el hogar</li>
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Seguros automotores</li>
-                        <li class="mb-1"><i class="fas fa-check text-green-500 mr-2"></i>Seguros de vida</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Análisis de coberturas personalizadas</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us -->
     <section id="nosotros" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
@@ -279,8 +281,7 @@
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contacto" class="py-16 bg-gray-100">
+    <section id="contacto" class="contact-bg text-white py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Contacto</h2>
             
@@ -289,29 +290,28 @@
                     <h3 class="text-xl font-bold mb-4">Información de Contacto</h3>
                     <div class="mb-6">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+                            <i class="fas fa-map-marker-alt text-white mr-3"></i>
                             <span>Sobremonte 1395, Rio Segundo, Córdoba</span>
                         </div>
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-phone text-blue-600 mr-3"></i>
+                            <i class="fas fa-phone text-white mr-3"></i>
                             <span>+54 9 3572 123456</span>
                         </div>
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-envelope text-blue-600 mr-3"></i>
+                            <i class="fas fa-envelope text-white mr-3"></i>
                             <span>info@piccainmobiliaria.com</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-clock text-blue-600 mr-3"></i>
+                            <i class="fas fa-clock text-white mr-3"></i>
                             <span>Lunes a Viernes: 9:00 - 18:00</span>
                         </div>
                     </div>
                     
-                    <!-- Mapa -->
                     <div class="bg-white p-4 rounded-lg shadow-md mb-6">
-                        <h4 class="font-bold mb-2">Ubicación</h4>
+                        <h4 class="font-bold mb-2 text-gray-800">Ubicación</h4>
                         <div class="h-64 bg-gray-200 rounded-lg overflow-hidden">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.897337042741!2d-63.91482272433669!3d-31.41788667431365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94312ecc8d2c5b9b%3A0x8c9b6e5e5a5e5b5e!2sSobremonte%201395%2C%20R%C3%ADo%20Segundo%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1690834567890!5m2!1ses!2sar" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.952516489344!2d-63.91138402484043!3d-31.387851693766166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432f703e2731c6b%3A0xe37a5433299c82a0!2sSobremonte%201395%2C%20R%C3%ADo%20Segundo%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1731864117502!5m2!1ses-419!2sar" 
                                 width="100%" 
                                 height="100%" 
                                 style="border:0;" 
@@ -321,40 +321,37 @@
                             </iframe>
                         </div>
                     </div>
-                    
-                    <div class="bg-white p-4 rounded-lg shadow-md">
-                        <h4 class="font-bold mb-2">¿Por qué elegirnos?</h4>
-                        <p class="text-gray-600 text-sm">Nuestra experiencia y compromiso nos convierten en la mejor opción para tus transacciones inmobiliarias, trámites automotores y servicios de seguros.</p>
-                    </div>
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-4">Envíanos un Mensaje</h3>
-                    <form>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Envíanos un Mensaje</h3>
+                    <form id="contactForm">
                         <div class="mb-4">
                             <label class="block text-gray-700 mb-2" for="name">Nombre</label>
-                            <input type="text" id="name" class="w-full p-2 border rounded-md">
+                            <input type="text" id="name" class="w-full p-2 border rounded-md" required>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 mb-2" for="email">Email</label>
-                            <input type="email" id="email" class="w-full p-2 border rounded-md">
+                            <input type="email" id="email" class="w-full p-2 border rounded-md" required>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 mb-2" for="phone">Teléfono</label>
-                            <input type="tel" id="phone" class="w-full p-2 border rounded-md">
+                            <input type="tel" id="phone" class="w-full p-2 border rounded-md" required>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 mb-2" for="service">Servicio de interés</label>
                             <select id="service" class="w-full p-2 border rounded-md">
                                 <option value="">Seleccione un servicio</option>
-                                <option value="inmobiliaria">Inmobiliaria</option>
+                                <option value="vender">Quiero vender/alquilar mi propiedad</option>
+                                <option value="comprar">Estoy buscando una propiedad</option>
                                 <option value="gestoria">Gestoría Automotor</option>
                                 <option value="seguros">Seguros</option>
+                                <option value="otro">Otra consulta</option>
                             </select>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 mb-2" for="message">Mensaje</label>
-                            <textarea id="message" rows="4" class="w-full p-2 border rounded-md"></textarea>
+                            <textarea id="message" rows="4" class="w-full p-2 border rounded-md" required></textarea>
                         </div>
                         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition w-full">
                             Enviar Mensaje
@@ -365,14 +362,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Picca Inmobiliaria</h3>
                     <p class="text-gray-400">Servicios inmobiliarios, gestoría automotor y seguros.</p>
-                    <p class="text-gray-400 mt-2">A cargo de Evangelina Picca</p>
+                    <p class="text-gray-400 mt-2">Evangelina Picca</p>
+                    <p class="text-gray-400 font-bold">MAT 7880</p>
                 </div>
                 
                 <div>
@@ -380,17 +377,22 @@
                     <ul class="space-y-2">
                         <li><a href="#inicio" class="text-gray-400 hover:text-white">Inicio</a></li>
                         <li><a href="#propiedades" class="text-gray-400 hover:text-white">Propiedades</a></li>
-                        <li><a href="#servicios" class="text-gray-400 hover:text-white">Servicios</a></li>
+                        <li><a href="#vender" class="text-gray-400 hover:text-white">Vender mi Propiedad</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-white">Otros Servicios</a></li>
                         <li><a href="#contacto" class="text-gray-400 hover:text-white">Contacto</a></li>
+                        
+                        <li>
+                            <a href="dashboard-propiedades.html" target="_blank" class="text-blue-400 hover:text-white">[Demo Dashboard]</a>
+                        </li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="font-bold mb-4">Nuestros Servicios</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Inmobiliaria</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Gestoría Automotor</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Seguros</a></li>
+                        <li><a href="#vender" class="text-gray-400 hover:text-white">Inmobiliaria</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-white">Gestoría Automotor</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-white">Seguros</a></li>
                     </ul>
                 </div>
                 
@@ -399,7 +401,7 @@
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/543572123456" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
                     </div>
                     <div class="mt-4">
                         <p class="text-gray-400 text-sm">Sobremonte 1395, Rio Segundo, Córdoba</p>
@@ -408,14 +410,13 @@
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>&copy; 2023 Picca Inmobiliaria. Todos los derechos reservados.</p>
+                <p>© 2025 Picca Inmobiliaria. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Property Details Modal (hidden by default) -->
-    <div id="propertyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-20">
-        <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-screen overflow-y-auto">
+    <div id="propertyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-20 p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-screen overflow-y-auto">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-2xl font-bold">Detalles de la Propiedad</h3>
@@ -445,26 +446,30 @@
                                 <span id="modalPrice" class="font-bold text-lg"></span>
                             </div>
                             <div class="bg-gray-100 p-3 rounded">
-                                <span class="block text-sm text-gray-500">Tipo</span>
-                                <span id="modalType" class="font-bold"></span>
+                                <span class="block text-sm text-gray-500">Operación</span>
+                                <span id="modalOperation" class="font-bold"></span>
                             </div>
                         </div>
                         
                         <div class="mb-4">
                             <h5 class="font-bold mb-2">Características</h5>
                             <div id="modalFeatures" class="grid grid-cols-2 gap-2">
-                                <!-- Features will be populated by JavaScript -->
-                            </div>
+                                </div>
                         </div>
                         
                         <div class="mb-4">
-                            <h5 class="font-bold mb-2">Descripción</h5>
+                            <h5 class-="font-bold mb-2">Descripción</h5>
                             <p id="modalDescription" class="text-gray-600"></p>
                         </div>
                         
-                        <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition w-full">
-                            <i class="fas fa-envelope mr-2"></i>Solicitar Información
-                        </button>
+                        <div class="flex space-x-2">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition flex-1">
+                                <i class="fas fa-envelope mr-2"></i>Solicitar Información
+                            </button>
+                            <a href="https://wa.me/543572123456" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition flex items-center justify-center">
+                                <i class="fab fa-whatsapp mr-2"></i>Consultar por WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -472,41 +477,74 @@
     </div>
 
     <script>
-        // Simple JavaScript for modal functionality
+        // Property data
+        const properties = {
+            1: {
+                title: "Casa Moderna en Barrio Jardín",
+                location: "Barrio Jardín, Río Segundo",
+                price: "$ 85,000,000",
+                operation: "Venta",
+                image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                features: [
+                    { icon: "fas fa-bed", text: "3 dormitorios" },
+                    { icon: "fas fa-bath", text: "2 baños" },
+                    { icon: "fas fa-car", text: "2 cocheras" },
+                    { icon: "fas fa-ruler-combined", text: "180 m²" },
+                    { icon: "fas fa-tree", text: "Jardín" },
+                    { icon: "fas fa-utensils", text: "Cocina equipada" }
+                ],
+                description: "Hermosa casa moderna ubicada en una zona residencial tranquila. Cuenta con amplios espacios, diseño contemporáneo y excelentes terminaciones. Ideal para familias que buscan comodidad y elegancia. La propiedad incluye living-comedor, cocina integrada, 3 dormitorios (suite principal con walk-in closet), 2 baños completos, lavadero independiente y garaje para 2 vehículos."
+            },
+            2: {
+                title: "Departamento Céntrico",
+                location: "Centro, Río Segundo",
+                price: "$ 85,000/mes",
+                operation: "Alquiler",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                features: [
+                    { icon: "fas fa-bed", text: "2 dormitorios" },
+                    { icon: "fas fa-bath", text: "1 baño" },
+                    { icon: "fas fa-car", text: "1 cochera" },
+                    { icon: "fas fa-ruler-combined", text: "65 m²" },
+                    { icon: "fas fa-warehouse", text: "Cochera cubierta" },
+                    { icon: "fas fa-tv", text: "Cable y WiFi incluidos" }
+                ],
+                description: "Departamento completamente amueblado en el corazón de Río Segundo. Ubicado a pocas cuadras de bancos, supermercados y comercios. Ideal para profesionales o parejas. Incluye living-comedor, cocina completa con electrodomésticos, 2 dormitorios con placares, baño completo con bañera, cochera cubierta y balcón. Expensas incluidas en el alquiler."
+            },
+            3: {
+                title: "Casa Familiar con Pileta",
+                location: "Barrio San Martín, Río Segundo",
+                price: "$ 120,000,000",
+                operation: "Venta",
+                image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                features: [
+                    { icon: "fas fa-bed", text: "4 dormitorios" },
+                    { icon: "fas fa-bath", text: "3 baños" },
+                    { icon: "fas fa-car", text: "2 cocheras" },
+                    { icon: "fas fa-ruler-combined", text: "220 m²" },
+                    { icon: "fas fa-swimming-pool", text: "Pileta" },
+                    { icon: "fas fa-tree", text: "Parque arbolado" }
+                ],
+                description: "Excelente oportunidad para adquirir esta espectacular casa familiar con pileta en un barrio consolidado de Río Segundo. La propiedad cuenta con amplio living con hogar a leña, comedor diario, cocina con comedor auxiliar, 4 dormitorios (principal en suite con vestidor), 3 baños completos, lavadero, quincho con parrilla y amplio parque con pileta. Perfecta para disfrutar en familia."
+            }
+        };
+
+        // Modal functionality
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('propertyModal');
             const closeModal = document.getElementById('closeModal');
-            const verDetallesButtons = document.querySelectorAll('.property-card button');
-            
-            // Sample property data
-            const properties = [
-                {
-                    title: "Casa Moderna en Zona Norte",
-                    location: "Av. Principal 123, Zona Norte",
-                    price: "USD 250,000",
-                    type: "Casa",
-                    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-                    features: [
-                        { icon: "fas fa-bed", text: "3 dormitorios" },
-                        { icon: "fas fa-bath", text: "2 baños" },
-                        { icon: "fas fa-car", text: "2 cocheras" },
-                        { icon: "fas fa-ruler-combined", text: "180 m²" },
-                        { icon: "fas fa-tree", text: "Jardín" },
-                        { icon: "fas fa-utensils", text: "Cocina equipada" }
-                    ],
-                    description: "Hermosa casa moderna ubicada en una zona residencial tranquila. Cuenta con amplios espacios, diseño contemporáneo y excelentes terminaciones. Ideal para familias que buscan comodidad y elegancia."
-                }
-            ];
+            const viewDetailsButtons = document.querySelectorAll('.view-details');
             
             // Open modal when "Ver Detalles" is clicked
-            verDetallesButtons.forEach(button => {
+            viewDetailsButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const property = properties[0]; // In a real app, this would be dynamic
+                    const propertyId = this.getAttribute('data-property');
+                    const property = properties[propertyId];
                     
                     document.getElementById('modalTitle').textContent = property.title;
                     document.getElementById('modalLocation').textContent = property.location;
                     document.getElementById('modalPrice').textContent = property.price;
-                    document.getElementById('modalType').textContent = property.type;
+                    document.getElementById('modalOperation').textContent = property.operation;
                     document.getElementById('modalImage').src = property.image;
                     document.getElementById('modalDescription').textContent = property.description;
                     
@@ -535,6 +573,33 @@
                 if (event.target === modal) {
                     modal.classList.add('hidden');
                 }
+            });
+            
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Gracias por su mensaje. Nos pondremos en contacto a la brevedad.');
+                this.reset();
+            });
+            
+            // Lógica para el interruptor de Vista de Lista / Vista de Mapa
+            const showGridBtn = document.getElementById('show-grid');
+            const showMapBtn = document.getElementById('show-map');
+            const gridView = document.getElementById('grid-view');
+            const mapView = document.getElementById('map-view');
+
+            showGridBtn.addEventListener('click', () => {
+                gridView.classList.remove('hidden');
+                mapView.classList.add('hidden');
+                showGridBtn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+                showMapBtn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+            });
+
+            showMapBtn.addEventListener('click', () => {
+                gridView.classList.add('hidden');
+                mapView.classList.remove('hidden');
+                showMapBtn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+                showGridBtn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
             });
         });
     </script>
