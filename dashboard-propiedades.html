@@ -2,98 +2,74 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mis Propiedades</title>
+    <title>Admin | Propiedades</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Roboto', sans-serif; }
-    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans">
     <div class="flex h-screen">
         <aside class="w-64 bg-gray-800 text-white flex flex-col">
-            <div class="p-4 text-center text-2xl font-bold border-b border-gray-700">
-                Picca Admin
-            </div>
+            <div class="p-4 text-center text-xl font-bold border-b border-gray-700">Picca Admin</div>
             <nav class="flex-1 mt-4">
-                <a href="dashboard-propiedades.html" class="flex items-center px-4 py-3 bg-gray-900 text-white">
-                    <i class="fas fa-home w-6 text-center"></i>
-                    <span class="ml-2">Mis Propiedades</span>
-                </a>
-                <a href="dashboard-nueva-propiedad.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-700">
-                    <i class="fas fa-plus w-6 text-center"></i>
-                    <span class="ml-2">Añadir Propiedad</span>
-                </a>
-                <a href="dashboard-servicios.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-700">
-                    <i class="fas fa-briefcase w-6 text-center"></i>
-                    <span class="ml-2">Gestionar Servicios</span>
-                </a>
+                <a href="dashboard-propiedades.html" class="flex items-center px-4 py-3 bg-gray-900 border-l-4 border-blue-500"><i class="fas fa-home w-6"></i> Propiedades</a>
+                <a href="dashboard-demandas.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-users w-6"></i> Demandas</a>
+                <a href="dashboard-clientes.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-address-book w-6"></i> Clientes CRM</a>
+                <a href="dashboard-categorias.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-tags w-6"></i> Categorías</a>
+                <a href="dashboard-servicios.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-briefcase w-6"></i> Servicios</a>
             </nav>
-            <div class="p-4 border-t border-gray-700">
-                <a href="index.html" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-700">
-                    <i class="fas fa-sign-out-alt w-6 text-center"></i>
-                    <span class="ml-2">Cerrar Sesión</span>
-                </a>
-            </div>
         </aside>
 
         <main class="flex-1 p-8 overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
-                <h1 class="text-3xl font-bold text-gray-800">Mis Propiedades</h1>
-                <a href="dashboard-nueva-propiedad.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition flex items-center">
-                    <i class="fas fa-plus mr-2"></i>Añadir Nueva Propiedad
-                </a>
+                <h1 class="text-2xl font-bold text-gray-800">Mis Propiedades</h1>
+                <a href="dashboard-nueva-propiedad.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"><i class="fas fa-plus mr-2"></i> Nueva Propiedad</a>
             </div>
 
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <table class="w-full">
-                    <thead class="bg-gray-50 border-b border-gray-200">
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-50 border-b">
                         <tr>
-                            <th class="p-4 text-left text-sm font-medium text-gray-500">Foto</th>
-                            <th class="p-4 text-left text-sm font-medium text-gray-500">Título</th>
-                            <th class="p-4 text-left text-sm font-medium text-gray-500">Estado</th>
-                            <th class="p-4 text-left text-sm font-medium text-gray-500">Tipo</th>
-                            <th class="p-4 text-left text-sm font-medium text-gray-500">Precio</th>
-                            <th class="p-4 text-left text-sm font-medium text-gray-500">Acciones</th>
+                            <th class="p-4 text-left">Propiedad</th>
+                            <th class="p-4 text-left">Propietario</th> <th class="p-4 text-left">Estado</th>
+                            <th class="p-4 text-left text-blue-600">Match Activo ✨</th>
+                            <th class="p-4 text-right">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="p-4"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="h-16 w-16 object-cover rounded-md"></td>
-                            <td class="p-4 font-medium text-gray-900">Casa Moderna en Barrio Jardín</td>
-                            <td class="p-4"><span class="px-2 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">Venta</span></td>
-                            <td class="p-4 text-gray-600">Casa</td>
-                            <td class="p-4 text-gray-800 font-bold">$ 85,000,000</td>
-                            <td class="p-4 flex space-x-2">
-                                <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit"></i></button>
-                                <button class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
-                                <button class="text-green-600 hover:text-green-800"><i class="fas fa-eye"></i></button>
+                    <tbody class="divide-y">
+                        <tr class="bg-blue-50">
+                            <td class="p-4">
+                                <div class="font-bold">Casa Moderna B° Jardín</div>
+                                <div class="text-gray-500 text-xs">$ 85.000.000</div>
+                            </td>
+                            <td class="p-4">
+                                <div class="font-bold text-gray-700">Roberto Gómez</div>
+                                <a href="#" class="text-green-600 text-xs"><i class="fab fa-whatsapp"></i> Contactar</a>
+                            </td>
+                            <td class="p-4"><span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Venta</span></td>
+                            <td class="p-4">
+                                <button onclick="openMatchModal('Casa Moderna')" class="flex items-center text-green-700 font-bold hover:underline">
+                                    <i class="fas fa-check-circle mr-2"></i> 2 Interesados
+                                </button>
+                            </td>
+                            <td class="p-4 text-right">
+                                <button class="text-gray-500 hover:text-blue-600 mx-1"><i class="fas fa-edit"></i></button>
+                                <button class="text-gray-500 hover:text-red-600 mx-1"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                         <tr>
-                            <td class="p-4"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="h-16 w-16 object-cover rounded-md"></td>
-                            <td class="p-4 font-medium text-gray-900">Departamento Céntrico</td>
-                            <td class="p-4"><span class="px-2 py-1 text-xs font-semibold text-white bg-green-600 rounded-full">Alquiler</span></td>
-                            <td class="p-4 text-gray-600">Departamento</td>
-                            <td class="p-4 text-gray-800 font-bold">$ 85,000/mes</td>
-                            <td class="p-4 flex space-x-2">
-                                <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit"></i></button>
-                                <button class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
-                                <button class="text-green-600 hover:text-green-800"><i class="fas fa-eye"></i></button>
+                            <td class="p-4">
+                                <div class="font-bold">Terreno en Pilar</div>
+                                <div class="text-gray-500 text-xs">Consultar</div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td class="p-4"><img src="https..." class="h-16 w-16 object-cover rounded-md bg-gray-200"></td>
-                            <td class="p-4 font-medium text-gray-900">Terreno en Pilar</td>
-                            <td class="p-4"><span class="px-2 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">Venta</span></td>
-                            <td class="p-4 text-gray-600">Terreno</td>
-                            <td class="p-4 text-gray-800 font-bold">Consultar</td>
-                            <td class="p-4 flex space-x-2">
-                                <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-edit"></i></button>
-                                <button class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button>
-                                <button class="text-green-600 hover:text-green-800"><i class="fas fa-eye"></i></button>
+                            <td class="p-4">
+                                <div class="font-bold text-gray-700">Ana María Sosa</div>
+                                <a href="#" class="text-green-600 text-xs"><i class="fab fa-whatsapp"></i> Contactar</a>
+                            </td>
+                            <td class="p-4"><span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Venta</span></td>
+                            <td class="p-4 text-gray-400">Sin coincidencias</td>
+                            <td class="p-4 text-right">
+                                <button class="text-gray-500 hover:text-blue-600 mx-1"><i class="fas fa-edit"></i></button>
+                                <button class="text-gray-500 hover:text-red-600 mx-1"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -101,5 +77,51 @@
             </div>
         </main>
     </div>
+
+    <div id="matchModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-lg overflow-hidden">
+            <div class="bg-blue-600 p-4 flex justify-between items-center text-white">
+                <h3 class="font-bold text-lg"><i class="fas fa-magic mr-2"></i> Coincidencias Detectadas</h3>
+                <button onclick="closeMatchModal()" class="hover:text-gray-200"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-600 mb-4 text-sm">Estos clientes están buscando algo similar a: <strong id="modalPropTitle">Propiedad</strong></p>
+                
+                <div class="space-y-3">
+                    <div class="border rounded-lg p-3 flex justify-between items-center hover:bg-gray-50">
+                        <div>
+                            <p class="font-bold text-gray-800">Francisco Maldonado</p>
+                            <p class="text-xs text-gray-500">Busca: Casa 2 dorm (Pilar) - Solicitado: 18/11</p>
+                        </div>
+                        <a href="https://wa.me/123456?text=Hola%20Francisco,%20tengo%20una%20propiedad%20que%20te%20puede%20interesar..." target="_blank" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 text-sm font-bold">
+                            <i class="fab fa-whatsapp"></i> Avisar
+                        </a>
+                    </div>
+                    <div class="border rounded-lg p-3 flex justify-between items-center hover:bg-gray-50">
+                        <div>
+                            <p class="font-bold text-gray-800">Lucía Torres</p>
+                            <p class="text-xs text-gray-500">Busca: Casa con Patio - Solicitado: 15/11</p>
+                        </div>
+                        <a href="#" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 text-sm font-bold">
+                            <i class="fab fa-whatsapp"></i> Avisar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100 p-3 text-center">
+                <button onclick="closeMatchModal()" class="text-gray-500 hover:text-gray-700 text-sm">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openMatchModal(title) {
+            document.getElementById('modalPropTitle').innerText = title;
+            document.getElementById('matchModal').classList.remove('hidden');
+        }
+        function closeMatchModal() {
+            document.getElementById('matchModal').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
