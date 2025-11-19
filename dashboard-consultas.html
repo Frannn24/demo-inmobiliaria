@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | Consultas y Captación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-gray-800 text-white flex flex-col">
+            <div class="p-4 text-center text-xl font-bold border-b border-gray-700">Picca Admin</div>
+            <nav class="flex-1 mt-4">
+                <a href="dashboard-propiedades.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-home w-6"></i> Propiedades</a>
+                
+                <a href="dashboard-consultas.html" class="flex items-center px-4 py-3 bg-gray-900 border-l-4 border-blue-500">
+                    <i class="fas fa-inbox w-6"></i> Consultas
+                    <span class="ml-auto bg-red-500 text-xs rounded-full px-2 py-0.5">2</span>
+                </a>
+
+                <a href="dashboard-demandas.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-users w-6"></i> Demandas (Busquedas)</a>
+                <a href="dashboard-clientes.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-address-book w-6"></i> Clientes CRM</a>
+                <a href="dashboard-categorias.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-tags w-6"></i> Categorías</a>
+                <a href="dashboard-servicios.html" class="flex items-center px-4 py-3 hover:bg-gray-700"><i class="fas fa-briefcase w-6"></i> Servicios</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-8 overflow-y-auto">
+            <h1 class="text-2xl font-bold text-gray-800 mb-2">Bandeja de Entrada</h1>
+            <p class="text-gray-600 mb-6">Gestioná las consultas generales y las solicitudes de tasación/venta.</p>
+
+            <div class="flex gap-4 mb-6">
+                <button class="bg-white px-4 py-2 rounded shadow text-blue-600 font-bold border-b-2 border-blue-600">Todas</button>
+                <button class="bg-transparent px-4 py-2 rounded text-gray-600 hover:bg-gray-200">Solo Ventas/Tasaciones</button>
+                <button class="bg-transparent px-4 py-2 rounded text-gray-600 hover:bg-gray-200">Gestoría/Seguros</button>
+            </div>
+
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-50 border-b">
+                        <tr>
+                            <th class="p-4 text-left w-32">Fecha/Hora</th>
+                            <th class="p-4 text-left w-48">Remitente</th>
+                            <th class="p-4 text-left w-32">Motivo</th>
+                            <th class="p-4 text-left">Mensaje</th>
+                            <th class="p-4 text-right w-48">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        
+                        <tr class="bg-blue-50 border-l-4 border-blue-500">
+                            <td class="p-4 text-gray-500">
+                                Hoy 10:30 <br>
+                                <span class="bg-green-100 text-green-800 text-xs px-2 rounded-full">Nuevo</span>
+                            </td>
+                            <td class="p-4">
+                                <div class="font-bold text-gray-800">Carlos Ruiz</div>
+                                <div class="text-xs text-gray-500">3572-555666</div>
+                            </td>
+                            <td class="p-4">
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-bold uppercase">Quiere Vender</span>
+                            </td>
+                            <td class="p-4 text-gray-700">
+                                "Hola Evangelina, tengo una casa en Pilar zona centro, herencia familiar. Quiero tasarla para venta..."
+                                <div class="mt-1 text-xs text-gray-500"><i class="fas fa-map-marker-alt"></i> Zona: Pilar</div>
+                            </td>
+                            <td class="p-4 text-right">
+                                <button onclick="openCaptacionModal('Carlos Ruiz', '3572-555666', 'casa', 'pilar')" class="bg-blue-600 text-white px-3 py-2 rounded shadow hover:bg-blue-700 transition flex items-center justify-center w-full mb-2">
+                                    <i class="fas fa-magic mr-2"></i> Procesar
+                                </button>
+                                <a href="#" class="text-green-600 hover:underline text-xs block text-center"><i class="fab fa-whatsapp"></i> Responder antes</a>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 text-gray-500">Ayer 18:00</td>
+                            <td class="p-4">
+                                <div class="font-bold text-gray-800">Marta Díaz</div>
+                                <div class="text-xs text-gray-500">marta@gmail.com</div>
+                            </td>
+                            <td class="p-4">
+                                <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-bold uppercase">Consulta Gral</span>
+                            </td>
+                            <td class="p-4 text-gray-700">
+                                "¿Hacen gestoría de motos también o solo autos?"
+                            </td>
+                            <td class="p-4 text-right">
+                                <button class="border border-gray-300 px-3 py-1 rounded hover:bg-gray-100 text-xs mb-1 w-full">Archivar</button>
+                                <a href="#" class="text-green-600 hover:underline text-xs block text-center"><i class="fab fa-whatsapp"></i> Responder</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div id="captacionModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 backdrop-blur-sm">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl overflow-hidden transform transition-all">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white flex justify-between items-center">
+                <div>
+                    <h2 class="text-2xl font-bold"><i class="fas fa-magic mr-2"></i> Procesar Captación</h2>
+                    <p class="text-blue-200 text-sm">El sistema convertirá esta consulta en un Cliente y un Borrador de Propiedad.</p>
+                </div>
+                <button onclick="closeModal()" class="text-blue-200 hover:text-white text-2xl"><i class="fas fa-times"></i></button>
+            </div>
+
+            <form id="processForm" class="p-6 grid grid-cols-2 gap-8 bg-gray-50">
+                
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="text-blue-800 font-bold mb-4 flex items-center">
+                        <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center mr-2">1</span> 
+                        Ficha del Cliente
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Nombre</label>
+                            <input type="text" id="cName" class="w-full border-b border-gray-300 py-1 focus:border-blue-500 outline-none bg-transparent font-bold text-gray-800" value="">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Teléfono</label>
+                            <input type="text" id="cPhone" class="w-full border-b border-gray-300 py-1 focus:border-blue-500 outline-none bg-transparent" value="">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Rol Asignado</label>
+                            <select class="w-full border bg-gray-50 rounded p-1 mt-1 text-sm">
+                                <option value="propietario" selected>Propietario (Vende)</option>
+                                <option value="ambos">Propietario y Buscador</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="text-blue-800 font-bold mb-4 flex items-center">
+                        <span class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center mr-2">2</span> 
+                        Borrador de Propiedad
+                    </h3>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Título Sugerido</label>
+                            <input type="text" class="w-full border-b border-gray-300 py-1 focus:border-blue-500 outline-none bg-transparent" value="Casa en Pilar (Captación Web)">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase">Tipo</label>
+                                <select id="pType" class="w-full border-b border-gray-300 py-1 bg-transparent">
+                                    <option value="casa">Casa</option>
+                                    <option value="depto">Departamento</option>
+                                    <option value="terreno">Terreno</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase">Estado</label>
+                                <select class="w-full border-b border-gray-300 py-1 bg-transparent text-orange-600 font-bold">
+                                    <option value="borrador">Borrador / Tasando</option>
+                                    <option value="activa">Publicar Ya</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Zona Detectada</label>
+                            <input type="text" id="pZone" class="w-full border-b border-gray-300 py-1 focus:border-blue-500 outline-none bg-transparent" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-2 flex justify-end pt-4 border-t mt-2 items-center">
+                    <span class="text-gray-500 text-sm mr-4 italic"><i class="fas fa-info-circle"></i> Podrás completar las fotos y precio después.</span>
+                    <button type="button" onclick="closeModal()" class="text-gray-600 hover:bg-gray-100 px-4 py-2 rounded mr-2">Cancelar</button>
+                    <button type="submit" class="bg-green-600 text-white font-bold px-6 py-3 rounded shadow hover:bg-green-700 hover:scale-105 transition transform flex items-center">
+                        <i class="fas fa-save mr-2"></i> Confirmar y Crear Fichas
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openCaptacionModal(nombre, telefono, tipo, zona) {
+            // 1. Precargar datos del cliente
+            document.getElementById('cName').value = nombre;
+            document.getElementById('cPhone').value = telefono;
+
+            // 2. Precargar datos inferidos de la propiedad
+            document.getElementById('pZone').value = zona.charAt(0).toUpperCase() + zona.slice(1); // Capitalizar
+            
+            // Intentar seleccionar el tipo
+            const tipoSelect = document.getElementById('pType');
+            // Lógica simple para seleccionar el tipo correcto en el dropdown
+            for(let i=0; i<tipoSelect.options.length; i++){
+                if(tipoSelect.options[i].value == tipo.toLowerCase()){
+                    tipoSelect.selectedIndex = i;
+                    break;
+                }
+            }
+
+            // 3. Mostrar Modal
+            document.getElementById('captacionModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('captacionModal').classList.add('hidden');
+        }
+
+        document.getElementById('processForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulación de guardado
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creando...';
+            
+            setTimeout(() => {
+                alert("¡Éxito! \n1. Cliente 'Carlos Ruiz' creado en CRM.\n2. Propiedad 'Casa en Pilar' creada en Borradores.");
+                closeModal();
+                btn.innerHTML = originalText;
+                // Aquí la fila de la tabla se marcaría como "Procesada" en un sistema real
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
